@@ -17,6 +17,10 @@
 		E1F27AB31DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */; };
 		E1F27AB51DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */; };
 		E1F27AB71DDA8AAA002E3C4B /* tic.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AB61DDA8AAA002E3C4B /* tic.gif */; };
+		E1F27AC61DDACA45002E3C4B /* Entypo_2605(1)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC21DDACA45002E3C4B /* Entypo_2605(1)_48.png */; };
+		E1F27AC71DDACA45002E3C4B /* Entypo_d83d(0)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */; };
+		E1F27AC81DDACA45002E3C4B /* Entypo_d83d(1)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */; };
+		E1F27AC91DDACA45002E3C4B /* Entypo_e728(0)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC51DDACA45002E3C4B /* Entypo_e728(0)_48.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg"; sourceTree = "<group>"; };
 		E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14611071_1268717246485254_831068506993488337_n.jpg; sourceTree = "<group>"; };
 		E1F27AB61DDA8AAA002E3C4B /* tic.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tic.gif; sourceTree = "<group>"; };
+		E1F27AC21DDACA45002E3C4B /* Entypo_2605(1)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_2605(1)_48.png"; sourceTree = "<group>"; };
+		E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_d83d(0)_48.png"; sourceTree = "<group>"; };
+		E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_d83d(1)_48.png"; sourceTree = "<group>"; };
+		E1F27AC51DDACA45002E3C4B /* Entypo_e728(0)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_e728(0)_48.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 		E1F27A831DDA6FEF002E3C4B /* parkinApp */ = {
 			isa = PBXGroup;
 			children = (
+				E1F27AC21DDACA45002E3C4B /* Entypo_2605(1)_48.png */,
+				E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */,
+				E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */,
+				E1F27AC51DDACA45002E3C4B /* Entypo_e728(0)_48.png */,
 				E1F27AB61DDA8AAA002E3C4B /* tic.gif */,
 				E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */,
 				E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */,
@@ -243,8 +255,12 @@
 			files = (
 				E1F27A8F1DDA6FEF002E3C4B /* LaunchScreen.storyboard in Resources */,
 				E1F27AB31DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg in Resources */,
+				E1F27AC91DDACA45002E3C4B /* Entypo_e728(0)_48.png in Resources */,
+				E1F27AC61DDACA45002E3C4B /* Entypo_2605(1)_48.png in Resources */,
 				E1F27AB51DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg in Resources */,
 				E1F27AB71DDA8AAA002E3C4B /* tic.gif in Resources */,
+				E1F27AC81DDACA45002E3C4B /* Entypo_d83d(1)_48.png in Resources */,
+				E1F27AC71DDACA45002E3C4B /* Entypo_d83d(0)_48.png in Resources */,
 				E1F27A8C1DDA6FEF002E3C4B /* Assets.xcassets in Resources */,
 				E1F27A8A1DDA6FEF002E3C4B /* Main.storyboard in Resources */,
 			);
@@ -517,6 +533,7 @@
 				E1F27AAB1DDA6FEF002E3C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1F27AAC1DDA6FEF002E3C4B /* Build configuration list for PBXNativeTarget "parkinAppTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +542,7 @@
 				E1F27AAE1DDA6FEF002E3C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1F27AAF1DDA6FEF002E3C4B /* Build configuration list for PBXNativeTarget "parkinAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +551,7 @@
 				E1F27AB11DDA6FEF002E3C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
