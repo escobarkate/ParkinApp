@@ -1,0 +1,6 @@
+framework module Pods_parkinApp {
+  umbrella header "Pods-parkinApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
