@@ -207,7 +207,7 @@
         <!--Ubicar-->
         <scene sceneID="fkg-VE-q2W">
             <objects>
-                <viewController id="fnm-P5-O1r" sceneMemberID="viewController">
+                <viewController id="fnm-P5-O1r" customClass="ViewControllerMapa" customModule="parkinApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TY5-qT-fzf"/>
                         <viewControllerLayoutGuide type="bottom" id="SgN-mY-6PT"/>
