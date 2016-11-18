@@ -15,6 +15,7 @@
 		E16FCA651DDD4F280043C4F8 /* ViewControllerReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16FCA641DDD4F270043C4F8 /* ViewControllerReg.swift */; };
 		E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */; };
 		E1C536481DDF616300345900 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C536471DDF616300345900 /* SQLite.framework */; };
+		E1C5364A1DDF7F9800345900 /* UsuarioDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C536491DDF7F9800345900 /* UsuarioDAO.swift */; };
 		E1F27A851DDA6FEF002E3C4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F27A841DDA6FEF002E3C4B /* AppDelegate.swift */; };
 		E1F27A871DDA6FEF002E3C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F27A861DDA6FEF002E3C4B /* ViewController.swift */; };
 		E1F27A8A1DDA6FEF002E3C4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F27A881DDA6FEF002E3C4B /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		E16FCA641DDD4F270043C4F8 /* ViewControllerReg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerReg.swift; sourceTree = "<group>"; };
 		E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMapa.swift; sourceTree = "<group>"; };
 		E1C536471DDF616300345900 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "SQLite.swift/build/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
+		E1C536491DDF7F9800345900 /* UsuarioDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioDAO.swift; sourceTree = "<group>"; };
 		E1F27A811DDA6FEF002E3C4B /* parkinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parkinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F27A841DDA6FEF002E3C4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F27A861DDA6FEF002E3C4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */,
 				E1100BAB1DDE847A00B03252 /* HttpClient.swift */,
 				E1100BAD1DDE95BC00B03252 /* Usuario.swift */,
+				E1C536491DDF7F9800345900 /* UsuarioDAO.swift */,
 			);
 			path = parkinApp;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				E1100BAE1DDE95BC00B03252 /* Usuario.swift in Sources */,
 				E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */,
 				E1F27A851DDA6FEF002E3C4B /* AppDelegate.swift in Sources */,
+				E1C5364A1DDF7F9800345900 /* UsuarioDAO.swift in Sources */,
 				E16FCA651DDD4F280043C4F8 /* ViewControllerReg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

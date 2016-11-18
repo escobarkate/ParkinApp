@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         client.post(url: "http://10.130.9.70:8080/usuarios/login/", json: jsonUser, callback: processData)
         
            }
+    
+    @IBAction func backToInit(_ segue: UIStoryboardSegue) {
+        }
 
     
     @IBAction func goToRegistrar(_ sender: Any) {
