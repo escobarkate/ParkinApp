@@ -18,40 +18,93 @@
 		E289AE63C1EBA4DEDFFB3854D1C50917 /* Pods-parkinAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6800BF6F80FB993D950DD8E95E9E39 /* Pods-parkinAppTests-dummy.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E1C536391DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		E1C5363B1DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		E1C5363D1DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		E1C5363F1DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		E1C536411DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		E1C536431DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		E1C536451DDF613300345900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		010A266B945DC02072620C6A3047061C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		036D87D6309075BD025C2AD3C1DF26DA /* Pods-parkinAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-parkinAppUITests.modulemap"; sourceTree = "<group>"; };
+		036D87D6309075BD025C2AD3C1DF26DA /* Pods-parkinAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-parkinAppUITests.modulemap"; sourceTree = "<group>"; };
 		05BA672DBD712096037F7A3CDB3A53E1 /* Pods-parkinAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-parkinAppTests-resources.sh"; sourceTree = "<group>"; };
 		062320F37275963E5E835A4BAC210404 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B472B012DA734C631274C0CB616D6AB /* Pods-parkinApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-parkinApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		0E40C1E2DF059C7D8A4A866BE2CAA469 /* Pods_parkinApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_parkinApp.framework; path = "Pods-parkinApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E40C1E2DF059C7D8A4A866BE2CAA469 /* Pods_parkinApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parkinApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA6CFB926C10A1EE0302FED0D3D32DD /* Pods-parkinAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-parkinAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		22375ABA169DF76C4DE7ED5284FCD08D /* Pods-parkinAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-parkinAppUITests-umbrella.h"; sourceTree = "<group>"; };
 		2337DD64FE147D7BB1E00D0A42672ADD /* Pods-parkinAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-parkinAppTests-frameworks.sh"; sourceTree = "<group>"; };
 		36DB83CB4279B90D59054691B89501D1 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		3F39474AB01CF2D2F608463B3616D3C1 /* Pods-parkinApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-parkinApp-dummy.m"; sourceTree = "<group>"; };
-		4441A093C2EF79CA835BA8238ADFA182 /* Pods-parkinApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-parkinApp.modulemap"; sourceTree = "<group>"; };
-		472D6B8C24B57108246A68DFAE928F88 /* Pods-parkinAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-parkinAppTests.modulemap"; sourceTree = "<group>"; };
+		4441A093C2EF79CA835BA8238ADFA182 /* Pods-parkinApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-parkinApp.modulemap"; sourceTree = "<group>"; };
+		472D6B8C24B57108246A68DFAE928F88 /* Pods-parkinAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-parkinAppTests.modulemap"; sourceTree = "<group>"; };
 		4A3CECE9D5FB7955B3CDC0D466370500 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		59B385FDC52B1F3567DF8B68AC38BF45 /* Pods-parkinApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-parkinApp-umbrella.h"; sourceTree = "<group>"; };
 		6ACD6C0788EF5859F7753F1D207D0D66 /* Pods-parkinAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-parkinAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		768B309308A1256A4F88B3B27F83B6A1 /* Pods_parkinAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_parkinAppTests.framework; path = "Pods-parkinAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		768B309308A1256A4F88B3B27F83B6A1 /* Pods_parkinAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parkinAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3937928F52B9DD8F69D99F319CE1D1 /* Pods-parkinAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-parkinAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C4AF91156AAA614CD9E887A1B913AA1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ABD868A83A7E9ADE01D8DCE530649A3 /* Pods-parkinAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-parkinAppUITests-dummy.m"; sourceTree = "<group>"; };
 		90278BF88C940EC40CFACA152F6CC84A /* Pods-parkinAppUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-parkinAppUITests-resources.sh"; sourceTree = "<group>"; };
 		924378DFC8C8E20668F4BF89E313C99E /* Pods-parkinAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-parkinAppUITests-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95C578A2271E6FC11006D9A95F0A52E0 /* Pods-parkinApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-parkinApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9993783FC320F1AE51984F09C3B17D9D /* Pods-parkinAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-parkinAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B8844D76C7EAD83A72929FC223FB995B /* Pods-parkinApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-parkinApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C2056F8D37F9D62F011E4E48E754D134 /* Pods-parkinApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-parkinApp.release.xcconfig"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D26A2E0838DED6E38F2959C180B15B83 /* Pods_parkinAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_parkinAppUITests.framework; path = "Pods-parkinAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26A2E0838DED6E38F2959C180B15B83 /* Pods_parkinAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parkinAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82D615918EC61297DF48283BBC7B9B1 /* Pods-parkinAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-parkinAppTests-umbrella.h"; sourceTree = "<group>"; };
 		D9D07187CB66D9795547B94C99C39596 /* Pods-parkinAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-parkinAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DB8E318B2561DCECF5B7D97964884D07 /* Pods-parkinAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-parkinAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E004374149D836C1256FFFCB38FECB72 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		E1C5362F1DDF613200345900 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = ../SQLite.swift/SQLite.xcodeproj; sourceTree = "<group>"; };
 		E70F35640ED9C0BD036BEDA837F3EB17 /* Pods-parkinAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-parkinAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7C980677DD48E12C1A139BB0CBE4581 /* Pods-parkinAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-parkinAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED6800BF6F80FB993D950DD8E95E9E39 /* Pods-parkinAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-parkinAppTests-dummy.m"; sourceTree = "<group>"; };
@@ -102,7 +155,6 @@
 				1418B056D31B27EE2CEBA552B5ADFE56 /* Base */,
 				6BC99F081C91F80679CFA5DDC6213D57 /* Maps */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -186,6 +238,7 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				E1C5362F1DDF613200345900 /* SQLite.xcodeproj */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				6B9DDBFD34805D0CECB3FE7AA6B7B594 /* Pods */,
@@ -237,6 +290,20 @@
 				36DB83CB4279B90D59054691B89501D1 /* GoogleMapsCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1C536301DDF613200345900 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5363A1DDF613300345900 /* SQLite.framework */,
+				E1C5363C1DDF613300345900 /* SQLiteTests iOS.xctest */,
+				E1C5363E1DDF613300345900 /* SQLite.framework */,
+				E1C536401DDF613300345900 /* SQLiteTests Mac.xctest */,
+				E1C536421DDF613300345900 /* SQLite.framework */,
+				E1C536441DDF613300345900 /* SQLiteTests tvOS.xctest */,
+				E1C536461DDF613300345900 /* SQLite.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E38C95F1AB9F4C8BEB93D5BBDD537213 /* Targets Support Files */ = {
@@ -349,6 +416,12 @@
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 81FD5DDA5E066BE94B29F9EC7759A08A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E1C536301DDF613200345900 /* Products */;
+					ProjectRef = E1C5362F1DDF613200345900 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				32CC7D55F95B80437607D3DA359FFD88 /* Pods-parkinApp */,
@@ -357,6 +430,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E1C5363A1DDF613300345900 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E1C536391DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1C5363C1DDF613300345900 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = E1C5363B1DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1C5363E1DDF613300345900 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E1C5363D1DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1C536401DDF613300345900 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = E1C5363F1DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1C536421DDF613300345900 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E1C536411DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1C536441DDF613300345900 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = E1C536431DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1C536461DDF613300345900 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E1C536451DDF613300345900 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D8036E2A07B0851A1F227C8391DCB53 /* Sources */ = {
