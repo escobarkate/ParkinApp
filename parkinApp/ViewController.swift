@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let contra = contraseña.text!
         
         let jsonUser = "{\"user\":\""+usu+"\",\"password\":\""+contra+"\"}"
-        client.post(url: "http://10.130.9.70:8080/usuarios/login/", json: jsonUser, callback: processData)
+        client.post(url: "http://192.168.0.23:8080/usuarios/login/", json: jsonUser, callback: processData)
         
            }
     
