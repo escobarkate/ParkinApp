@@ -35,6 +35,8 @@
 		E6A3BE1D1DE6507F009DF746 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */; };
 		E6A3BE1F1DE650CF009DF746 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE1E1DE650CF009DF746 /* Player.swift */; };
 		E6A3BE211DE651BB009DF746 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE201DE651BB009DF746 /* SampleData.swift */; };
+		E6A3BE231DE666BE009DF746 /* 4Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A3BE221DE666BE009DF746 /* 4Stars.png */; };
+		E6A3BE251DE668CB009DF746 /* Parqueadero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE241DE668CB009DF746 /* Parqueadero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		E6A3BE1E1DE650CF009DF746 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E6A3BE201DE651BB009DF746 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		E6A3BE221DE666BE009DF746 /* 4Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4Stars.png; path = Assets.xcassets/4Stars.png; sourceTree = "<group>"; };
+		E6A3BE241DE668CB009DF746 /* Parqueadero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parqueadero.swift; sourceTree = "<group>"; };
 		E885736F9C6980001EA2D5A5 /* Pods_parkinAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parkinAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF25A01B552234F03C22D2C /* Pods-parkinAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parkinAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-parkinAppUITests/Pods-parkinAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +232,7 @@
 				E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */,
 				E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */,
 				E1F27AC51DDACA45002E3C4B /* Entypo_e728(0)_48.png */,
+				E6A3BE221DE666BE009DF746 /* 4Stars.png */,
 				E1F27AB61DDA8AAA002E3C4B /* tic.gif */,
 				E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */,
 				E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */,
@@ -247,6 +252,7 @@
 				E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */,
 				E6A3BE1E1DE650CF009DF746 /* Player.swift */,
 				E6A3BE201DE651BB009DF746 /* SampleData.swift */,
+				E6A3BE241DE668CB009DF746 /* Parqueadero.swift */,
 			);
 			path = parkinApp;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				E1F27AC81DDACA45002E3C4B /* Entypo_d83d(1)_48.png in Resources */,
 				E1F27AC71DDACA45002E3C4B /* Entypo_d83d(0)_48.png in Resources */,
 				E1F27A8C1DDA6FEF002E3C4B /* Assets.xcassets in Resources */,
+				E6A3BE231DE666BE009DF746 /* 4Stars.png in Resources */,
 				E1F27A8A1DDA6FEF002E3C4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +642,7 @@
 				E1B612F31DE2BC7800CFDAC1 /* ViewControllerCalif.swift in Sources */,
 				E6A3BE1D1DE6507F009DF746 /* PlayersViewController.swift in Sources */,
 				E1100BAE1DDE95BC00B03252 /* Usuario.swift in Sources */,
+				E6A3BE251DE668CB009DF746 /* Parqueadero.swift in Sources */,
 				E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */,
 				E6A3BE211DE651BB009DF746 /* SampleData.swift in Sources */,
 				E1F27A851DDA6FEF002E3C4B /* AppDelegate.swift in Sources */,

@@ -396,7 +396,7 @@
             </objects>
             <point key="canvasLocation" x="1436" y="122"/>
         </scene>
-        <!--Calificar-->
+        <!--Favoritos-->
         <scene sceneID="Owx-xh-8p8">
             <objects>
                 <tableViewController id="mF2-zi-XHc" customClass="PlayersTableViewController" customModule="parkinApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -416,12 +416,14 @@
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="l29-CB-HSS">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-2f-9NY">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-2f-9NY">
+                                                            <frame key="frameInset" width="48" height="31"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7n-yW-xVi">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7n-yW-xVi">
+                                                            <frame key="frameInset" minY="31" width="43" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -453,16 +455,17 @@
                             <outlet property="delegate" destination="mF2-zi-XHc" id="yEj-4I-E23"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Calificar" image="Entypo_d83d(0)_48.png" id="zAm-vt-sHw"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="Entypo_2605(1)_48.png" id="zAm-vt-sHw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXP-Zd-fvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2421.5999999999999" y="465.51724137931041"/>
+            <point key="canvasLocation" x="2478" y="463"/>
         </scene>
     </scenes>
     <resources>
         <image name="14611071_1268717246485254_831068506993488337_n.jpg" width="186" height="187"/>
         <image name="Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg" width="2000" height="1335"/>
+        <image name="Entypo_2605(1)_48.png" width="48" height="48"/>
         <image name="Entypo_d83d(0)_48.png" width="48" height="48"/>
         <image name="Entypo_e728(0)_48.png" width="48" height="48"/>
     </resources>
