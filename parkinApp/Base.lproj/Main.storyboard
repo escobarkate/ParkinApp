@@ -288,7 +288,7 @@
         <scene sceneID="xiH-Ba-l7O">
             <objects>
                 <navigationController id="t4c-6h-DkJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rqD-l1-vg2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rqD-l1-vg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -313,7 +313,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LQ9-FB-Cg3" id="7hg-R9-2iY">
-                                    <frame key="frameInset" width="375" height="127"/>
+                                    <frame key="frameInset" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wh0-AH-xYX">
@@ -357,6 +357,71 @@
             </objects>
             <point key="canvasLocation" x="2388" y="1136.5817091454273"/>
         </scene>
+        <!--Favoritos-->
+        <scene sceneID="7bI-cB-wRm">
+            <objects>
+                <tableViewController id="owC-Sj-x7u" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="v5h-Z2-Mbc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="63" id="377-au-wyr">
+                                <rect key="frame" x="0.0" y="92" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="377-au-wyr" id="eWd-G9-II3">
+                                    <frame key="frameInset" width="375" height="62"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Entypo_2605(1)_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="lki-us-xa4">
+                                            <frame key="frameInset" minX="28" minY="3" width="51" height="51"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parqueadero x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9K-0G-Dm9">
+                                            <frame key="frameInset" minX="81" minY="21" width="126" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoFavoriteCell" rowHeight="63" id="Z5a-UH-hq0">
+                                <rect key="frame" x="0.0" y="155" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z5a-UH-hq0" id="kqh-OZ-WHL">
+                                    <frame key="frameInset" width="375" height="62"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Entypo_2606(0)_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Ue-QD-Xym">
+                                            <frame key="frameInset" minX="28" minY="3" width="51" height="51"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parqueadero y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j36-KY-ewZ">
+                                            <frame key="frameInset" minX="81" minY="21" width="126" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="owC-Sj-x7u" id="hbG-0Z-BLB"/>
+                            <outlet property="delegate" destination="owC-Sj-x7u" id="o7x-zy-VGF"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="Entypo_2605(1)_48.png" id="xof-rC-Nub"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="592-mX-SfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509.5999999999999" y="-583.3583208395803"/>
+        </scene>
         <!--Ubicar-->
         <scene sceneID="fkg-VE-q2W">
             <objects>
@@ -390,6 +455,7 @@
                         <segue destination="fnm-P5-O1r" kind="relationship" relationship="viewControllers" id="ia0-ZW-F4v"/>
                         <segue destination="dVS-eS-agg" kind="relationship" relationship="viewControllers" id="5f0-gg-UJj"/>
                         <segue destination="mF2-zi-XHc" kind="relationship" relationship="viewControllers" id="fns-qc-bEZ"/>
+                        <segue destination="owC-Sj-x7u" kind="relationship" relationship="viewControllers" id="67W-Xh-iS9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpC-mz-2sj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,7 +475,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQS-hA-8wQ" id="CBM-UX-fcl">
-                                    <frame key="frameInset" width="342" height="79"/>
+                                    <frame key="frameInset" width="342" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HNb-8I-BlI">
@@ -417,13 +483,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="l29-CB-HSS">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-2f-9NY">
-                                                            <frame key="frameInset" width="48" height="31"/>
+                                                            <frame key="frameInset" width="48" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7n-yW-xVi">
-                                                            <frame key="frameInset" minY="31" width="43" height="20"/>
+                                                            <frame key="frameInset" minY="44" width="43" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -466,6 +532,7 @@
         <image name="14611071_1268717246485254_831068506993488337_n.jpg" width="186" height="187"/>
         <image name="Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg" width="2000" height="1335"/>
         <image name="Entypo_2605(1)_48.png" width="48" height="48"/>
+        <image name="Entypo_2606(0)_48.png" width="48" height="48"/>
         <image name="Entypo_d83d(0)_48.png" width="48" height="48"/>
         <image name="Entypo_e728(0)_48.png" width="48" height="48"/>
     </resources>

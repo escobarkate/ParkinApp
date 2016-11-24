@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 let PlayersData = [
     Player(name: "Bill Evans", game: "Tic-Tac-Toe", rating:4),
     Player(name:"Oscar Peterson", game: "Sping the Bottle", rating : 5),
