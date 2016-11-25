@@ -16,8 +16,9 @@ class PlayersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadParqueaderos()
-        Calificar.reloadData()
-
+        DispatchQueue.main.async {
+        self.Calificar.reloadData()
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,8 +30,6 @@ class PlayersTableViewController: UITableViewController {
         //loadParqueaderos()
         Calificar.reloadData()
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

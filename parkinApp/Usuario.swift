@@ -9,8 +9,7 @@
 import Foundation
 
 class Usuario {
-    var id:Int64!
+    var id:Int!
     var nombre: String!
     var user: String!
-    var password: String!
 }

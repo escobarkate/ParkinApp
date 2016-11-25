@@ -14,8 +14,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var contraseña: UITextField!
     
+    var user:Usuario?
+    var dao:UsuarioDAO!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        dao = UsuarioDAO()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -49,20 +53,20 @@ class ViewController: UIViewController {
             
             let success:Bool = json.value(forKey: "success") as! Bool
             if success == true {
-                //let usuario:NSDictionary = json.object(forKey: "user") as! NSDictionary
-                //let nombres:NSDictionary = usuario.object(forKey: "nombres") as! NSDictionary
-                //let usr:NSDictionary = usuario.object(forKey: "user") as! NSDictionary
-                
+                let usr:NSDictionary = json.value(forKey: "user") as! NSDictionary
+                let id = usr["id"] as! Int
+                let nombre = usr["nombres"] as! String
+                let usu = usr["user"] as! String
+                let us = Usuario()
+                us.id = id
+                us.nombre = nombre
+                us.user = usu
+                dao.insert(u: us)
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "next", sender: nil)
                 }
-                
             }
-            
         }catch{}
-        
-        
-        
     }
     
     func JSONStringify(value: AnyObject,prettyPrinted:Bool = false) -> String{
@@ -71,18 +75,15 @@ class ViewController: UIViewController {
         
         
         if JSONSerialization.isValidJSONObject(value) {
-            
             do{
                 let data = try JSONSerialization.data(withJSONObject: value, options: options)
                 if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                     return string as String
                 }
             }catch {
-                
                 print("error")
                 //Access error here
             }
-            
         }
         return ""
         
