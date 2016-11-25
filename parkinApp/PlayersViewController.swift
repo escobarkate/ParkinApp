@@ -11,15 +11,12 @@ import UIKit
 class PlayersTableViewController: UITableViewController {
     
     @IBOutlet var Calificar: UITableView!
-    //var Players: [Player] = PlayersData
     var ParqueaderosData: [Parqueadero] = [Parqueadero]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         loadParqueaderos()
-        //Calificar.reloadData()
+        Calificar.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

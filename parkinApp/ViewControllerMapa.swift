@@ -12,10 +12,19 @@ import GoogleMaps
 
 class ViewControllerMapa: UIViewController {
     
+    var ParqueaderosData: [Parqueadero] = [Parqueadero]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        loadParqueaderos()
+        cargarMapa()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func cargarMapa(){
         let camera = GMSCameraPosition.camera(withLatitude: 2.4412,longitude: -76.6079, zoom: 16)
         
         let mapView = GMSMapView.map(withFrame: self.view.bounds  ,camera: camera)
@@ -26,41 +35,60 @@ class ViewControllerMapa: UIViewController {
         mapView.settings.scrollGestures=true
         mapView.settings.zoomGestures=false
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(2.442716, -76.605459)
-        marker.title = "Parqueadero Artes"
-        marker.snippet = "Dirección: Cra 20 c 7a 123"
-        
-        
         //marker.icon = UIImage(named: "house")
         //marker.icon = GMSMarker.markerImage(with: UIColor.blue)
-        marker.appearAnimation = kGMSMarkerAnimationPop
-        marker.isFlat = true
-        marker.map = mapView
         
-        let marker1 = GMSMarker()
-        marker1.position = CLLocationCoordinate2DMake(2.441680, -76.607344)
-        marker1.title = "Parqueadero Patiño"
-        marker1.snippet = "Dirección: Cra 20 c 7a 125"
-        marker1.icon = GMSMarker.markerImage(with: UIColor.cyan)
-        marker1.map = mapView
-        
-        let marker2 = GMSMarker()
-        marker2.position = CLLocationCoordinate2DMake(2.440713, -76.607331)
-        marker2.title = "Parqueadero Hotel Achalay"
-        marker2.icon = GMSMarker.markerImage(with: UIColor.magenta)
-        marker2.snippet = "Dirección: Calle 6 #7-18"
-        marker2.map = mapView
+        for p in ParqueaderosData{
+            let marker1 = GMSMarker()
+            let long = Double(p.longitud!)
+            let lat = Double(p.latitud!)
+            marker1.position = CLLocationCoordinate2DMake(lat!, long!)
+            marker1.title = p.nombre
+            marker1.snippet = p.direccion
+            marker1.icon = GMSMarker.markerImage(with: UIColor.magenta)
+            marker1.map = mapView
+        }
         
         view=mapView
-        
-        
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadParqueaderos(){
+        let client:HttpClient = HttpClient()
+        client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
     }
+    
+    
+    func processData(data:Data?){
+        
+        do{
+            let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            
+            let success:Bool = json.value(forKey: "success") as! Bool
+            if success == true {
+                let parq:NSArray = json.value(forKey: "parq") as! NSArray
+                for i in 0 ..< parq.count{
+                    let parq_obj = parq[i] as! NSDictionary
+                    let id = parq_obj["id"] as! Int
+                    let nombre = parq_obj["nombre"] as! String
+                    let direccion = parq_obj["direccion"] as! String
+                    let precio = parq_obj["precio"] as! String
+                    let longitud = parq_obj["longitud"] as! String
+                    let latitud = parq_obj["latitud"] as! String
+                    let calificacion = parq_obj["calificacion"] as! Double
+                    let cantidad = parq_obj["cantidad"] as! Int
+                    let imagen = parq_obj["imagen"] as! String
+                    let lugareslibres = parq_obj["lugaresLibres"] as! Int
+                    let horarioApertura = parq_obj["horarioApertura"] as! String
+                    let horarioCerrado = parq_obj["horarioCerrado"] as! String
+                    
+                    let p = Parqueadero(id: id, nombre: nombre, direccion: direccion, precio: precio, longitud: longitud, latitud: latitud, calificacion: calificacion, cantidad: cantidad, imagen: imagen, lugareslibres: lugareslibres, horarioApertura: horarioApertura, horarioCerrado: horarioCerrado)
+                    ParqueaderosData.append(p)
+                }
+            }
+        }catch{}
+    }
+
     
     
 }

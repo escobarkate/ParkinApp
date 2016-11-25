@@ -14,8 +14,6 @@
 		E1100BAE1DDE95BC00B03252 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100BAD1DDE95BC00B03252 /* Usuario.swift */; };
 		E16FCA651DDD4F280043C4F8 /* ViewControllerReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16FCA641DDD4F270043C4F8 /* ViewControllerReg.swift */; };
 		E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */; };
-		E1B612F31DE2BC7800CFDAC1 /* ViewControllerCalif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B612F21DE2BC7800CFDAC1 /* ViewControllerCalif.swift */; };
-		E1B612F51DE2C56D00CFDAC1 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B612F41DE2C56D00CFDAC1 /* ViewControllerTableViewCell.swift */; };
 		E1C5364A1DDF7F9800345900 /* UsuarioDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C536491DDF7F9800345900 /* UsuarioDAO.swift */; };
 		E1F27A851DDA6FEF002E3C4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F27A841DDA6FEF002E3C4B /* AppDelegate.swift */; };
 		E1F27A871DDA6FEF002E3C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F27A861DDA6FEF002E3C4B /* ViewController.swift */; };
@@ -26,7 +24,6 @@
 		E1F27AA51DDA6FEF002E3C4B /* parkinAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F27AA41DDA6FEF002E3C4B /* parkinAppUITests.swift */; };
 		E1F27AB31DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */; };
 		E1F27AB51DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */; };
-		E1F27AB71DDA8AAA002E3C4B /* tic.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AB61DDA8AAA002E3C4B /* tic.gif */; };
 		E1F27AC61DDACA45002E3C4B /* Entypo_2605(1)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC21DDACA45002E3C4B /* Entypo_2605(1)_48.png */; };
 		E1F27AC71DDACA45002E3C4B /* Entypo_d83d(0)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */; };
 		E1F27AC81DDACA45002E3C4B /* Entypo_d83d(1)_48.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */; };
@@ -40,8 +37,6 @@
 		E67100D11DE7A5D1003F5BB2 /* FavoritosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67100D01DE7A5D1003F5BB2 /* FavoritosTableViewController.swift */; };
 		E6A3BE1B1DE64E1F009DF746 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A3BE0E1DE64E07009DF746 /* SQLite.framework */; };
 		E6A3BE1D1DE6507F009DF746 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */; };
-		E6A3BE1F1DE650CF009DF746 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE1E1DE650CF009DF746 /* Player.swift */; };
-		E6A3BE211DE651BB009DF746 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE201DE651BB009DF746 /* SampleData.swift */; };
 		E6A3BE251DE668CB009DF746 /* Parqueadero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3BE241DE668CB009DF746 /* Parqueadero.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,8 +118,6 @@
 		E1100BAD1DDE95BC00B03252 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E16FCA641DDD4F270043C4F8 /* ViewControllerReg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerReg.swift; sourceTree = "<group>"; };
 		E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMapa.swift; sourceTree = "<group>"; };
-		E1B612F21DE2BC7800CFDAC1 /* ViewControllerCalif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCalif.swift; sourceTree = "<group>"; };
-		E1B612F41DE2C56D00CFDAC1 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E1C536491DDF7F9800345900 /* UsuarioDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioDAO.swift; sourceTree = "<group>"; };
 		E1F27A811DDA6FEF002E3C4B /* parkinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parkinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F27A841DDA6FEF002E3C4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +134,6 @@
 		E1F27AA61DDA6FEF002E3C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg"; sourceTree = "<group>"; };
 		E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14611071_1268717246485254_831068506993488337_n.jpg; sourceTree = "<group>"; };
-		E1F27AB61DDA8AAA002E3C4B /* tic.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tic.gif; sourceTree = "<group>"; };
 		E1F27AC21DDACA45002E3C4B /* Entypo_2605(1)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_2605(1)_48.png"; sourceTree = "<group>"; };
 		E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_d83d(0)_48.png"; sourceTree = "<group>"; };
 		E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Entypo_d83d(1)_48.png"; sourceTree = "<group>"; };
@@ -155,8 +147,6 @@
 		E67100D01DE7A5D1003F5BB2 /* FavoritosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewController.swift; sourceTree = "<group>"; };
 		E6A3BE031DE64E07009DF746 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
-		E6A3BE1E1DE650CF009DF746 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		E6A3BE201DE651BB009DF746 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		E6A3BE241DE668CB009DF746 /* Parqueadero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parqueadero.swift; sourceTree = "<group>"; };
 		E885736F9C6980001EA2D5A5 /* Pods_parkinAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parkinAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF25A01B552234F03C22D2C /* Pods-parkinAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parkinAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-parkinAppUITests/Pods-parkinAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,7 +240,6 @@
 				E1F27AC31DDACA45002E3C4B /* Entypo_d83d(0)_48.png */,
 				E1F27AC41DDACA45002E3C4B /* Entypo_d83d(1)_48.png */,
 				E1F27AC51DDACA45002E3C4B /* Entypo_e728(0)_48.png */,
-				E1F27AB61DDA8AAA002E3C4B /* tic.gif */,
 				E1F27AB21DDA71CB002E3C4B /* Catedral-Basílica-de-Nuestra-Señora-de-la-Asunción-de-Popayán-Colombia-1.jpg */,
 				E1F27AB41DDA7334002E3C4B /* 14611071_1268717246485254_831068506993488337_n.jpg */,
 				E1F27A841DDA6FEF002E3C4B /* AppDelegate.swift */,
@@ -264,11 +253,7 @@
 				E1100BAB1DDE847A00B03252 /* HttpClient.swift */,
 				E1100BAD1DDE95BC00B03252 /* Usuario.swift */,
 				E1C536491DDF7F9800345900 /* UsuarioDAO.swift */,
-				E1B612F21DE2BC7800CFDAC1 /* ViewControllerCalif.swift */,
-				E1B612F41DE2C56D00CFDAC1 /* ViewControllerTableViewCell.swift */,
 				E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */,
-				E6A3BE1E1DE650CF009DF746 /* Player.swift */,
-				E6A3BE201DE651BB009DF746 /* SampleData.swift */,
 				E6A3BE241DE668CB009DF746 /* Parqueadero.swift */,
 				E67100D01DE7A5D1003F5BB2 /* FavoritosTableViewController.swift */,
 			);
@@ -492,7 +477,6 @@
 				E66A6C701DE749200015C0C1 /* 1Stars.png in Resources */,
 				E66A6C731DE749200015C0C1 /* 4Stars.png in Resources */,
 				E66A6C781DE74A080015C0C1 /* 5Stars.png in Resources */,
-				E1F27AB71DDA8AAA002E3C4B /* tic.gif in Resources */,
 				E1F27AC81DDACA45002E3C4B /* Entypo_d83d(1)_48.png in Resources */,
 				E1F27AC71DDACA45002E3C4B /* Entypo_d83d(0)_48.png in Resources */,
 				E1F27A8C1DDA6FEF002E3C4B /* Assets.xcassets in Resources */,
@@ -659,20 +643,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A3BE1F1DE650CF009DF746 /* Player.swift in Sources */,
 				E1100BAC1DDE847A00B03252 /* HttpClient.swift in Sources */,
 				E1F27A871DDA6FEF002E3C4B /* ViewController.swift in Sources */,
-				E1B612F31DE2BC7800CFDAC1 /* ViewControllerCalif.swift in Sources */,
 				E6A3BE1D1DE6507F009DF746 /* PlayersViewController.swift in Sources */,
 				E67100D11DE7A5D1003F5BB2 /* FavoritosTableViewController.swift in Sources */,
 				E1100BAE1DDE95BC00B03252 /* Usuario.swift in Sources */,
 				E6A3BE251DE668CB009DF746 /* Parqueadero.swift in Sources */,
 				E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */,
-				E6A3BE211DE651BB009DF746 /* SampleData.swift in Sources */,
 				E1F27A851DDA6FEF002E3C4B /* AppDelegate.swift in Sources */,
 				E1C5364A1DDF7F9800345900 /* UsuarioDAO.swift in Sources */,
 				E16FCA651DDD4F280043C4F8 /* ViewControllerReg.swift in Sources */,
-				E1B612F51DE2C56D00CFDAC1 /* ViewControllerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

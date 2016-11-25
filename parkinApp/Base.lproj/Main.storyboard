@@ -288,7 +288,7 @@
         <scene sceneID="xiH-Ba-l7O">
             <objects>
                 <navigationController id="t4c-6h-DkJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rqD-l1-vg2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rqD-l1-vg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -303,7 +303,7 @@
         <!--Favoritos-->
         <scene sceneID="7bI-cB-wRm">
             <objects>
-                <tableViewController id="owC-Sj-x7u" sceneMemberID="viewController">
+                <tableViewController title="Favoritos" id="owC-Sj-x7u" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="v5h-Z2-Mbc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +313,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="377-au-wyr" id="eWd-G9-II3">
-                                    <frame key="frameInset" width="375" height="63"/>
+                                    <frame key="frameInset" width="375" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Entypo_2605(1)_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="lki-us-xa4">
@@ -334,7 +334,7 @@
                                 <rect key="frame" x="0.0" y="155" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z5a-UH-hq0" id="kqh-OZ-WHL">
-                                    <frame key="frameInset" width="375" height="63"/>
+                                    <frame key="frameInset" width="375" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Entypo_2606(0)_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Ue-QD-Xym">
@@ -365,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="2478" y="1201"/>
         </scene>
-        <!--Ubicar-->
+        <!--Ubicación-->
         <scene sceneID="fkg-VE-q2W">
             <objects>
-                <viewController id="fnm-P5-O1r" customClass="ViewControllerMapa" customModule="parkinApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ubicación" id="fnm-P5-O1r" customClass="ViewControllerMapa" customModule="parkinApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TY5-qT-fzf"/>
                         <viewControllerLayoutGuide type="bottom" id="SgN-mY-6PT"/>
@@ -404,10 +404,10 @@
             </objects>
             <point key="canvasLocation" x="1436" y="122"/>
         </scene>
-        <!--Calificar-->
+        <!--Parqueaderos-->
         <scene sceneID="Owx-xh-8p8">
             <objects>
-                <tableViewController id="mF2-zi-XHc" customClass="PlayersTableViewController" customModule="parkinApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Parqueaderos" id="mF2-zi-XHc" customClass="PlayersTableViewController" customModule="parkinApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="OEn-dN-Cfr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -417,7 +417,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQS-hA-8wQ" id="CBM-UX-fcl">
-                                    <frame key="frameInset" width="342" height="80"/>
+                                    <frame key="frameInset" width="342" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HNb-8I-BlI">
