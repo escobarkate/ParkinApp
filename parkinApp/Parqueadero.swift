@@ -13,7 +13,7 @@ struct Parqueadero {
     var id: Int
     var nombre : String?
     var direccion: String?
-    var precio :Int
+    var precio :String?
     var longitud : String?
     var latitud: String?
     var calificacion : Double
@@ -25,7 +25,7 @@ struct Parqueadero {
    
     
     
-    init(id: Int, nombre: String?, direccion: String? , precio: Int, longitud: String?, latitud: String?, calificacion: Double, cantidad: Int, imagen: String?, lugareslibres: Int , horarioApertura: String? , horarioCerrado: String?){
+    init(id: Int, nombre: String?, direccion: String? , precio: String?, longitud: String?, latitud: String?, calificacion: Double, cantidad: Int, imagen: String?, lugareslibres: Int , horarioApertura: String? , horarioCerrado: String?){
         self.id = id
         self.nombre = nombre
         self.direccion = direccion

@@ -10,10 +10,17 @@ import UIKit
 
 class PlayersTableViewController: UITableViewController {
     
-    var Players: [Player] = PlayersData
+    @IBOutlet var Calificar: UITableView!
+    //var Players: [Player] = PlayersData
+    let x = Parqueaderos()
+    var ParqueaderosData: [Parqueadero] = [Parqueadero]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         loadParqueaderos()
+        Calificar.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,28 +43,26 @@ class PlayersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Players.count
+        return ParqueaderosData.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //loadParqueaderos()
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath)
-        let player = Players[indexPath.row] as Player
+        let p = ParqueaderosData[indexPath.row] as Parqueadero
         
         if let nameLabel = cell.viewWithTag(100) as? UILabel {
-            nameLabel.text = player.name
+            nameLabel.text = p.nombre
         }
         
         if let gameLabel = cell.viewWithTag(101) as? UILabel {
-            gameLabel.text = player.game
+            gameLabel.text = p.direccion
         }
         
         if let ratingImageView  = cell.viewWithTag(102) as? UIImageView {
-             ratingImageView.image = self.imageForRating(rating: player.rating)
+             ratingImageView.image = self.imageForRating(rating: Int(p.calificacion))
         }
-       
-
         return cell
     }
     
@@ -68,7 +73,7 @@ class PlayersTableViewController: UITableViewController {
     
     func loadParqueaderos(){
         let client:HttpClient = HttpClient()
-        client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.128.105:8080/parqueaderos/calif", callback: processData)
     }
 
     
@@ -80,14 +85,24 @@ class PlayersTableViewController: UITableViewController {
             let success:Bool = json.value(forKey: "success") as! Bool
             if success == true {
                 let parq:NSArray = json.value(forKey: "parq") as! NSArray
-                //let ParqueaderosData = []
-                for i in 0...parq.count{
-                    //let nom:String = parq[i].value(forKey: "nombre") as! String
-                    //let nom:String = parq[i]["nombre"] as! String
-                    //Parqueadero(nombre: "\(parq[i])")
+                for i in 0 ..< parq.count{
+                    let parq_obj = parq[i] as! NSDictionary
+                    let id = parq_obj["id"] as! Int
+                    let nombre = parq_obj["nombre"] as! String
+                    let direccion = parq_obj["direccion"] as! String
+                    let precio = parq_obj["precio"] as! String
+                    let longitud = parq_obj["longitud"] as! String
+                    let latitud = parq_obj["latitud"] as! String
+                    let calificacion = parq_obj["calificacion"] as! Double
+                    let cantidad = parq_obj["cantidad"] as! Int
+                    let imagen = parq_obj["imagen"] as! String
+                    let lugareslibres = parq_obj["lugaresLibres"] as! Int
+                    let horarioApertura = parq_obj["horarioApertura"] as! String
+                    let horarioCerrado = parq_obj["horarioCerrado"] as! String
+                    
+                    let p = Parqueadero(id: id, nombre: nombre, direccion: direccion, precio: precio, longitud: longitud, latitud: latitud, calificacion: calificacion, cantidad: cantidad, imagen: imagen, lugareslibres: lugareslibres, horarioApertura: horarioApertura, horarioCerrado: horarioCerrado)
+                    ParqueaderosData.append(p)
                 }
-                //let nombres:NSDictionary = usuario.object(forKey: "nombres") as! NSDictionary
-                //let usr:NSDictionary = usuario.object(forKey: "user") as! NSDictionary
             }
         }catch{}
     }

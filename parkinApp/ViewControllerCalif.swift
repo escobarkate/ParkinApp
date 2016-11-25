@@ -52,7 +52,7 @@ class ViewControllerCalif: UIViewController, UITableViewDataSource, UITableViewD
         data.append("Amarillo")
         data.append("Verde")
         
-        cliente.get(url: "http://192.168.0.23:8080/parqueaderos/calif", callback: processData)
+        cliente.get(url: "http://192.168.128.105:8080/parqueaderos/calif", callback: processData)
         
     }
     
