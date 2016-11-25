@@ -12,7 +12,6 @@ class PlayersTableViewController: UITableViewController {
     
     @IBOutlet var Calificar: UITableView!
     //var Players: [Player] = PlayersData
-    let x = Parqueaderos()
     var ParqueaderosData: [Parqueadero] = [Parqueadero]()
     
     override func viewDidLoad() {
@@ -20,7 +19,7 @@ class PlayersTableViewController: UITableViewController {
         
         
         loadParqueaderos()
-        Calificar.reloadData()
+        //Calificar.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,6 +27,13 @@ class PlayersTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //loadParqueaderos()
+        Calificar.reloadData()
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,7 +79,7 @@ class PlayersTableViewController: UITableViewController {
     
     func loadParqueaderos(){
         let client:HttpClient = HttpClient()
-        client.get(url: "http://192.168.128.105:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
     }
 
     

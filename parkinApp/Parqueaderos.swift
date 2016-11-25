@@ -17,7 +17,7 @@ class Parqueaderos{
     
     func loadParq(){
     let client:HttpClient = HttpClient()
-    client.get(url: "http://192.168.128.105:8080/parqueaderos/calif", callback: processData)
+    client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
     }
     
     
