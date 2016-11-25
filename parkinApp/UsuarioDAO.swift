@@ -17,7 +17,7 @@ class UsuarioDAO{
     var db:Connection!
     
     var usuario:Table = Table("usuario")
-    var id:Expression<Int> = Expression<Int>("id")
+    var id:Expression<Int64> = Expression<Int64>("id")
     var nombre:Expression<String> =  Expression<String>("nombre")
     var user:Expression<String> =  Expression<String>("user")
     
@@ -54,7 +54,7 @@ class UsuarioDAO{
         }
     }
     
-    func delete(id:Int){
+    func delete(id:Int64){
         let d = usuario.filter(self.id == id)
         let query = d.delete()
         do{
@@ -63,7 +63,7 @@ class UsuarioDAO{
         }
     }
     
-    func planetaById(id:Int) -> Usuario?{
+    func planetaById(id:Int64) -> Usuario?{
         
         let filter = usuario.filter(self.id == id)
         var p:Usuario? = nil
@@ -96,7 +96,7 @@ class UsuarioDAO{
             for row in try db.prepare(sql){
                 
                 let p:Usuario = Usuario()
-                p.id = row[0] as! Int
+                p.id = row[0] as! Int64
                 p.nombre = row[1] as! String
                 p.user = row[2] as! String
                 data.append(p)

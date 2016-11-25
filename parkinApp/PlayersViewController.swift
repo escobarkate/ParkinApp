@@ -10,14 +10,26 @@ import UIKit
 
 class PlayersTableViewController: UITableViewController {
     
+    var dao:UsuarioDAO!
+    let client:HttpClient = HttpClient()
+    var user:[Usuario] = []
+    
     @IBOutlet var Calificar: UITableView!
     var ParqueaderosData: [Parqueadero] = [Parqueadero]()
+    var idParq:[Int] = []
+    var c:[Double] = []
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        dao = UsuarioDAO()
+        user = dao.all()
+        print(user[0].id)
         loadParqueaderos()
+        loadCalif(u: String(user[0].id))
         DispatchQueue.main.async {
-        self.Calificar.reloadData()
+            self.Calificar.reloadData()
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -73,11 +85,40 @@ class PlayersTableViewController: UITableViewController {
         return UIImage(named: imageName)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let p:Parqueadero = ParqueaderosData[indexPath.row]
+        var z:Bool = false
+        var s:Int = 0
+        for i in idParq{
+            if p.id == i{
+                z = true
+                s = i
+            }
+        }
+        if z == true {
+            let mensaje:String = "Usted ya ha calificado el "+p.nombre!+" con una calificación de "+String(c[s])
+            let alertController = UIAlertController(title: "Calificar parqueadero", message:
+                mensaje, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }else{
+            let mensaje:String = "Usted no ha calificado el "+p.nombre!+"."
+            let alertController = UIAlertController(title: "Calificar parqueadero", message:
+                mensaje, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     func loadParqueaderos(){
-        let client:HttpClient = HttpClient()
         client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
     }
-
+    
+    func loadCalif(u:String){
+        let jsonUser = "{\"id\":"+u+"}"
+        print(jsonUser)
+        client.post(url: "http://192.168.1.30:8080/parqueaderos/caliUser", json:jsonUser, callback: processData2)
+    }
     
     func processData(data:Data?){
         
@@ -104,6 +145,24 @@ class PlayersTableViewController: UITableViewController {
                     
                     let p = Parqueadero(id: id, nombre: nombre, direccion: direccion, precio: precio, longitud: longitud, latitud: latitud, calificacion: calificacion, cantidad: cantidad, imagen: imagen, lugareslibres: lugareslibres, horarioApertura: horarioApertura, horarioCerrado: horarioCerrado)
                     ParqueaderosData.append(p)
+                }
+            }
+        }catch{}
+    }
+    
+    func processData2(data:Data?){
+        do{
+            let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            
+            let success:Bool = json.value(forKey: "success") as! Bool
+            if success == true {
+                let parq:NSArray = json.value(forKey: "parq") as! NSArray
+                for i in 0 ..< parq.count{
+                    let parq_obj = parq[i] as! NSDictionary
+                    let id = parq_obj["idParqueadero"] as! Int
+                    let cal = parq_obj["calificacion"] as! Double
+                    idParq.append(id)
+                    c.append(cal)
                 }
             }
         }catch{}

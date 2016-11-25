@@ -58,7 +58,7 @@ class ViewController: UIViewController {
                 let nombre = usr["nombres"] as! String
                 let usu = usr["user"] as! String
                 let us = Usuario()
-                us.id = id
+                us.id = Int64(id)
                 us.nombre = nombre
                 us.user = usu
                 dao.insert(u: us)

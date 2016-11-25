@@ -45,7 +45,7 @@ class ViewControllerMapa: UIViewController {
             marker1.position = CLLocationCoordinate2DMake(lat!, long!)
             marker1.title = p.nombre
             marker1.snippet = p.direccion
-            marker1.icon = GMSMarker.markerImage(with: UIColor.magenta)
+            //marker1.icon = GMSMarker.markerImage(with: UIColor.magenta)
             marker1.map = mapView
         }
         
