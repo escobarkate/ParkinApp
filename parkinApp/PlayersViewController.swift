@@ -89,10 +89,11 @@ class PlayersTableViewController: UITableViewController {
         let p:Parqueadero = ParqueaderosData[indexPath.row]
         var z:Bool = false
         var s:Int = 0
-        for i in idParq{
-            if p.id == i{
+        
+        for (index, value) in idParq.enumerated() {
+            if p.id == value{
                 z = true
-                s = i
+                s = index
             }
         }
         if z == true {
@@ -102,11 +103,58 @@ class PlayersTableViewController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }else{
-            let mensaje:String = "Usted no ha calificado el "+p.nombre!+"."
+            /*let mensaje:String = "Usted no ha calificado el "+p.nombre!+"."
             let alertController = UIAlertController(title: "Calificar parqueadero", message:
                 mensaje, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
-            self.present(alertController, animated: true, completion: nil)
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Digite su puntuación"
+                textField.keyboardType = UIKeyboardType.numberPad
+            }
+            
+            alertController.view.addSubview(<#T##view: UIView##UIView#>)
+            alertController.addAction(UIAlertAction(title: "Calificar", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)*/
+            
+            //get the Slider values from UserDefaults
+            let defaultSliderValue = UserDefaults.standard.float(forKey: "sliderValue")
+            
+            //create the Alert message with extra return spaces
+            let sliderAlert = UIAlertController(title: "Calificar Parqueadero", message: "Usted no ha calificado el "+p.nombre!+".\n\n\n\n", preferredStyle: .alert)
+            
+            //create a Slider and fit within the extra message spaces
+            //add the Slider to a Subview of the sliderAlert
+            let slider = UISlider(frame:CGRect(x: 20, y: 100, width: 230, height: 80))
+            slider.minimumValue = 1
+            slider.maximumValue = 5
+            UserDefaults.standard.set(slider.value, forKey: "sliderValue")
+            slider.value = defaultSliderValue
+            slider.isContinuous = true
+            slider.tintColor = UIColor.red
+            
+            //slider.didChangeValue(forKey: "sliderValue")
+            //slider.didChangeValue(forKey: <#T##String#>)
+            sliderAlert.view.addSubview(slider)
+            
+            //Crear label
+            let label = UILabel(frame:CGRect(x: 123, y: 70, width: 50, height: 80))
+            label.text = String(UserDefaults.standard.float(forKey: "sliderValue"))
+            sliderAlert.view.addSubview(label)
+            
+            //OK button action
+            let sliderAction = UIAlertAction(title: "Calificar", style: .default, handler: { (result : UIAlertAction) -> Void in
+                UserDefaults.standard.set(slider.value, forKey: "sliderValue")
+            })
+            
+            //Cancel button action
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive, handler: nil)
+            
+            //Add buttons to sliderAlert
+            sliderAlert.addAction(sliderAction)
+            sliderAlert.addAction(cancelAction)
+            
+            //present the sliderAlert message
+            self.present(sliderAlert, animated: true, completion: nil)
         }
     }
     
