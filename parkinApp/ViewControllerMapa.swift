@@ -55,7 +55,7 @@ class ViewControllerMapa: UIViewController {
     
     func loadParqueaderos(){
         let client:HttpClient = HttpClient()
-        client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
     }
     
     

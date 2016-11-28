@@ -34,7 +34,8 @@ class ViewController: UIViewController {
         let contra = contraseña.text!
         
         let jsonUser = "{\"user\":\""+usu+"\",\"password\":\""+contra+"\"}"
-        client.post(url: "http://192.168.1.30:8080/usuarios/login/", json: jsonUser, callback: processData)
+        client.post(url: "http://192.168.1.6:8080/usuarios/login/", json: jsonUser, callback: processData)
+        
         
          }
     
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
                 us.id = Int64(id)
                 us.nombre = nombre
                 us.user = usu
+                dao.deleteAll()
                 dao.insert(u: us)
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "next", sender: nil)

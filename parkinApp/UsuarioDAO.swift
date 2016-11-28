@@ -62,6 +62,14 @@ class UsuarioDAO{
         }catch{
         }
     }
+    func deleteAll(){
+        let query = usuario.delete()
+        do{
+            try db.run(query)
+        }catch{
+        }
+        
+    }
     
     func planetaById(id:Int64) -> Usuario?{
         

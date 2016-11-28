@@ -14,10 +14,15 @@ class PlayersTableViewController: UITableViewController {
     let client:HttpClient = HttpClient()
     var user:[Usuario] = []
     
+    
     @IBOutlet var Calificar: UITableView!
     var ParqueaderosData: [Parqueadero] = [Parqueadero]()
     var idParq:[Int] = []
     var c:[Double] = []
+    var userID:Int!
+    
+    var label:UILabel!
+    var slider:UISlider!
     
     override func viewDidLoad() {
         
@@ -25,7 +30,9 @@ class PlayersTableViewController: UITableViewController {
         
         dao = UsuarioDAO()
         user = dao.all()
+        print(user);
         print(user[0].id)
+        userID = Int(user[0].id)
         loadParqueaderos()
         loadCalif(u: String(user[0].id))
         DispatchQueue.main.async {
@@ -103,18 +110,6 @@ class PlayersTableViewController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }else{
-            /*let mensaje:String = "Usted no ha calificado el "+p.nombre!+"."
-            let alertController = UIAlertController(title: "Calificar parqueadero", message:
-                mensaje, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addTextField { (textField) in
-                textField.placeholder = "Digite su puntuación"
-                textField.keyboardType = UIKeyboardType.numberPad
-            }
-            
-            alertController.view.addSubview(<#T##view: UIView##UIView#>)
-            alertController.addAction(UIAlertAction(title: "Calificar", style: UIAlertActionStyle.default,handler: nil))
-            alertController.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default,handler: nil))
-            self.present(alertController, animated: true, completion: nil)*/
             
             //get the Slider values from UserDefaults
             let defaultSliderValue = UserDefaults.standard.float(forKey: "sliderValue")
@@ -124,26 +119,37 @@ class PlayersTableViewController: UITableViewController {
             
             //create a Slider and fit within the extra message spaces
             //add the Slider to a Subview of the sliderAlert
-            let slider = UISlider(frame:CGRect(x: 20, y: 100, width: 230, height: 80))
+            slider = UISlider(frame:CGRect(x: 20, y: 100, width: 230, height: 80))
             slider.minimumValue = 1
             slider.maximumValue = 5
-            UserDefaults.standard.set(slider.value, forKey: "sliderValue")
             slider.value = defaultSliderValue
+            slider.addTarget(self, action: #selector(PlayersTableViewController.sliderChanged), for:.valueChanged)
             slider.isContinuous = true
             slider.tintColor = UIColor.red
-            
-            //slider.didChangeValue(forKey: "sliderValue")
-            //slider.didChangeValue(forKey: <#T##String#>)
+            UserDefaults.standard.didChangeValue(forKey: "sliderValue")
             sliderAlert.view.addSubview(slider)
             
             //Crear label
-            let label = UILabel(frame:CGRect(x: 123, y: 70, width: 50, height: 80))
-            label.text = String(UserDefaults.standard.float(forKey: "sliderValue"))
+            label = UILabel(frame:CGRect(x: 123, y: 70, width: 50, height: 80))
+            label.text = String(Int((slider.value)))
             sliderAlert.view.addSubview(label)
             
             //OK button action
             let sliderAction = UIAlertAction(title: "Calificar", style: .default, handler: { (result : UIAlertAction) -> Void in
-                UserDefaults.standard.set(slider.value, forKey: "sliderValue")
+                var jsonUser = "{\"user\":"+String(self.userID)
+                jsonUser += ",\"parqueadero\":\""+String(p.id)
+                jsonUser += "\",\"calificacion\":\""+String(Int(self.slider.value))+"\"}"
+                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/cali", json: jsonUser, callback: self.processCalif)
+                let x = Float(p.calificacion)+Float(Int(self.slider.value))
+                
+                let a = Float(p.cantidad)+1
+                let suma = (x/a)*10
+                let suma1 = Int(suma)
+                let suma2 = suma1/10
+                var json = "{\"id\":"+String(p.id)
+                json += ",\"cantidad\":"+String(Int(a))
+                json += ",\"calificacion\":\""+String(suma2)+"\"}"
+                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/cf", json: json, callback: self.processCf)
             })
             
             //Cancel button action
@@ -158,14 +164,18 @@ class PlayersTableViewController: UITableViewController {
         }
     }
     
+    func sliderChanged(){
+        label.text = String(Int((slider.value)))
+    }
+    
     func loadParqueaderos(){
-        client.get(url: "http://192.168.1.30:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
     }
     
     func loadCalif(u:String){
         let jsonUser = "{\"id\":"+u+"}"
         print(jsonUser)
-        client.post(url: "http://192.168.1.30:8080/parqueaderos/caliUser", json:jsonUser, callback: processData2)
+        client.post(url: "http://192.168.1.6:8080/parqueaderos/caliUser", json:jsonUser, callback: processData2)
     }
     
     func processData(data:Data?){
@@ -215,6 +225,35 @@ class PlayersTableViewController: UITableViewController {
             }
         }catch{}
     }
+    
+    func processCalif(data:Data?){
+        do{
+            let json1:NSDictionary
+            json1 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            let success:Bool = json1.value(forKey: "success") as! Bool
+            if success == true {
+                print ("Success calif")
+            }
+        }catch{}
+    }
+
+    func processCf(data:Data?){
+        do{
+            let json1:NSDictionary
+            json1 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            let success:Bool = json1.value(forKey: "success") as! Bool
+            if success == true {
+                self.ParqueaderosData = []
+                loadParqueaderos()
+                loadCalif(u: String(userID))
+                DispatchQueue.main.async {
+                    self.Calificar.reloadData()
+                }
+            }
+        }catch{}
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
