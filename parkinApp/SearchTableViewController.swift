@@ -13,7 +13,6 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     @IBOutlet var Buscar: UITableView!
     var ParqueaderosData: [Parqueadero] = [Parqueadero]()
     let client:HttpClient = HttpClient()
-    let items = ["Mac","iPhone","Apple Watch","iPad"]
     var nombres:[String] = []
     //let items = [String] ()
     var filteredItems = [String]()
@@ -38,6 +37,13 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == "detalle"{
+            let detalles:InfoParqueaderoTableViewController = segue.destination as! InfoParqueaderoTableViewController
+            detalles.Parqueaderos=ParqueaderosData[Buscar.indexPathForSelectedRow!.row]
+        }
     }
 
     // MARK: - Table view data source
