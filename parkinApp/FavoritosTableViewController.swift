@@ -185,7 +185,7 @@ class FavoritosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let p:Parqueadero = ParqueaderosFav[indexPath.row]
-            let mensaje:String = "Desea eliminar el "+p.nombre!+" de la seccion de favoritos"
+            let mensaje:String = "Desea eliminar el Parqueadero "+p.nombre!+" de la seccion de favoritos"
             let alertController = UIAlertController(title: "Eliminar favorito", message:
                 mensaje, preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Eliminar", style: UIAlertActionStyle.default,handler: {
@@ -206,7 +206,7 @@ class FavoritosTableViewController: UITableViewController {
             self.present(alertController, animated: true, completion: nil)
         }else{
             let p:Parqueadero = ParqueaderosNoFav[indexPath.row]
-            let mensaje:String = "Desea agregar el "+p.nombre!+" a la seccion de favoritos"
+            let mensaje:String = "Desea agregar el Parqueadero "+p.nombre!+" a la seccion de favoritos"
             let alertController = UIAlertController(title: "Agregar favorito", message:
                 mensaje, preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Agregar", style: UIAlertActionStyle.default,handler: {

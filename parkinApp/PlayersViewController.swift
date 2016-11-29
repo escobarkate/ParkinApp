@@ -105,7 +105,7 @@ class PlayersTableViewController: UITableViewController {
             }
         }
         if z == true {
-            let mensaje:String = "Usted ya ha calificado el "+p.nombre!+" con una calificación de "+String(c[s])
+            let mensaje:String = "Usted ya ha calificado el Parqueadero "+p.nombre!+" con una calificación de "+String(c[s])
             let alertController = UIAlertController(title: "Calificar parqueadero", message:
                 mensaje, preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
@@ -116,7 +116,7 @@ class PlayersTableViewController: UITableViewController {
             let defaultSliderValue = UserDefaults.standard.float(forKey: "sliderValue")
             
             //create the Alert message with extra return spaces
-            let sliderAlert = UIAlertController(title: "Calificar Parqueadero", message: "Usted no ha calificado el "+p.nombre!+".\n\n\n\n", preferredStyle: .alert)
+            let sliderAlert = UIAlertController(title: "Calificar Parqueadero", message: "Usted no ha calificado el Parqueadero "+p.nombre!+".\n\n\n\n", preferredStyle: .alert)
             
             //create a Slider and fit within the extra message spaces
             //add the Slider to a Subview of the sliderAlert

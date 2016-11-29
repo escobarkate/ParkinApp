@@ -10,7 +10,11 @@ import UIKit
 
 class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     
+    @IBOutlet var Buscar: UITableView!
+    var ParqueaderosData: [Parqueadero] = [Parqueadero]()
+    let client:HttpClient = HttpClient()
     let items = ["Mac","iPhone","Apple Watch","iPad"]
+    var nombres:[String] = []
     //let items = [String] ()
     var filteredItems = [String]()
     var searchController = UISearchController()
@@ -18,7 +22,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadParqueaderos()
         searchController = UISearchController(searchResultsController : nil)
         searchController.dimsBackgroundDuringPresentation = true
         self.searchController.searchBar.sizeToFit()
@@ -26,14 +30,9 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
         
         tableView.tableHeaderView = searchController.searchBar
         tableView.reloadData()
-        /*self.resultSearchController = UISearchController(searchResultsController : nil)
-        self.resultSearchController.searchResultsUpdater = self
-        self.resultSearchController.dimsBackgroundDuringPresentation = false
-        self.resultSearchController.searchBar.sizeToFit()
-        
-        self.tableView.tableHeaderView = self.resultSearchController.searchBar
-        self.tableView.reloadData()
- */
+        DispatchQueue.main.async {
+            self.Buscar.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +52,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
             return filteredItems.count
         }
         else{
-            return items.count
+            return nombres.count
         }
     }
 
@@ -66,7 +65,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
             }
         }else{
             if let nameLabel = cell.viewWithTag(100) as? UILabel {
-                nameLabel.text = items[indexPath.row]
+                nameLabel.text = nombres[indexPath.row]
             }
         }
         return cell
@@ -75,20 +74,52 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
   
    
     func updateSearchResults(for searchController: UISearchController) {
-        
-       filteredItems.removeAll(keepingCapacity: false)
-        
-        filteredItems = items.filter{
+        filteredItems.removeAll(keepingCapacity: false)
+        filteredItems = nombres.filter{
             item in
-            
             item.lowercased().contains(searchController.searchBar.text!.lowercased())
         }
         tableView.reloadData()
-        
-        
     }
- 
     
+    func loadParqueaderos(){
+        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
+    }
+    
+    func processData(data:Data?){
+        
+        do{
+            let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            
+            let success:Bool = json.value(forKey: "success") as! Bool
+            if success == true {
+                let parq:NSArray = json.value(forKey: "parq") as! NSArray
+                for i in 0 ..< parq.count{
+                    let parq_obj = parq[i] as! NSDictionary
+                    let id = parq_obj["id"] as! Int
+                    let nombre = parq_obj["nombre"] as! String
+                    
+                    let direccion = parq_obj["direccion"] as! String
+                    let precio = parq_obj["precio"] as! String
+                    let longitud = parq_obj["longitud"] as! String
+                    let latitud = parq_obj["latitud"] as! String
+                    let calificacion = parq_obj["calificacion"] as! Double
+                    let cantidad = parq_obj["cantidad"] as! Int
+                    let imagen = parq_obj["imagen"] as! String
+                    let lugareslibres = parq_obj["lugaresLibres"] as! Int
+                    let horarioApertura = parq_obj["horarioApertura"] as! String
+                    let horarioCerrado = parq_obj["horarioCerrado"] as! String
+                    
+                    let p = Parqueadero(id: id, nombre: nombre, direccion: direccion, precio: precio, longitud: longitud, latitud: latitud, calificacion: calificacion, cantidad: cantidad, imagen: imagen, lugareslibres: lugareslibres, horarioApertura: horarioApertura, horarioCerrado: horarioCerrado)
+                    ParqueaderosData.append(p)
+                    nombres.append(nombre)
+                }
+            }
+        }catch{}
+        DispatchQueue.main.async {
+            self.Buscar.reloadData()
+        }
+    }
 
 
 }
