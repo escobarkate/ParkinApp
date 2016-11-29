@@ -66,6 +66,7 @@ class PlayersTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return ParqueaderosData.count
     }
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -224,6 +225,9 @@ class PlayersTableViewController: UITableViewController {
                 }
             }
         }catch{}
+        DispatchQueue.main.async {
+            self.Calificar.reloadData()
+        }
     }
     
     func processCalif(data:Data?){
@@ -232,9 +236,9 @@ class PlayersTableViewController: UITableViewController {
             json1 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
             let success:Bool = json1.value(forKey: "success") as! Bool
             if success == true {
-                print ("Success calif")
             }
         }catch{}
+        
     }
 
     func processCf(data:Data?){

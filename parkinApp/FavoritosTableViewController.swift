@@ -10,12 +10,35 @@ import UIKit
 
 class FavoritosTableViewController: UITableViewController {
     
+    @IBOutlet var Favorite: UITableView!
+    var ParqueaderosFav: [Parqueadero] = [Parqueadero]()
+    var ParqueaderosNoFav: [Parqueadero] = [Parqueadero]()
+    var idParq:[Int]=[]
+    
+    var dao:UsuarioDAO!
+    let client:HttpClient = HttpClient()
+    var user:[Usuario] = []
+    
     let section = ["Favoritos", "No favoritos"]
     
     let items = [["Parqueadero 1", "Parqueadero 3", "Parqueadero 4"], ["Parqueadero 2", "Parqueadero 5"]]
+    
+    var userID:Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dao = UsuarioDAO()
+        user = dao.all()
+        userID = Int(user[0].id)
+        loadFav(u: String(userID))
+        loadParqueaderos()
+        print(ParqueaderosFav)
+        print(ParqueaderosNoFav)
+        DispatchQueue.main.async {
+            self.Favorite.reloadData()
+        }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,36 +46,223 @@ class FavoritosTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //loadParqueaderos()
+        Favorite.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
+    // MARK: - Table view data sourcex
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return self.section[section]
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return section.count
+        
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0{
+            return ParqueaderosFav.count
+        }else{
+            return ParqueaderosNoFav.count
+        }
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        //return items[section].count
     }
     
+
     
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell:UITableViewCell
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath)
+            print(ParqueaderosFav)
+            //print(ParqueaderosFav[indexPath.row])
+            
+            let p = ParqueaderosFav[indexPath.row] as Parqueadero
+            
+            if let nameLabel = cell.viewWithTag(100) as? UILabel {
+                nameLabel.text = p.nombre
+            }
+        }else{
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "NoFavoriteCell", for: indexPath)
+            
+            let p = ParqueaderosNoFav[indexPath.row] as Parqueadero
+            
+            if let nameLabel = cell.viewWithTag(101) as? UILabel {
+                nameLabel.text = p.nombre
+            }
+        }
 
         return cell
     }
-    */
+    
+    func loadFav(u:String){
+        let jsonUser = "{\"id\":"+u+"}"
+        client.post(url: "http://192.168.1.6:8080/parqueaderos/fav", json:jsonUser, callback: processFav)
+    }
+    
+    
+    func loadParqueaderos(){
+        let client:HttpClient = HttpClient()
+        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
+    }
+    
+    func processFav(data:Data?){
+        do{
+            let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            
+            let success:Bool = json.value(forKey: "success") as! Bool
+            if success == true {
+                let parq:NSArray = json.value(forKey: "parq") as! NSArray
+                for i in 0 ..< parq.count{
+                    let parq_obj = parq[i] as! NSDictionary
+                    let id = parq_obj["id_parqueadero"] as! Int
+                    idParq.append(id)
+                }
+            }
+        }catch{}
+    }
+    
+    func processData(data:Data?){
+        
+        do{
+            let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            
+            let success:Bool = json.value(forKey: "success") as! Bool
+            //if success == true {
+                var z:Bool
+                let parq:NSArray = json.value(forKey: "parq") as! NSArray
+                for i in 0 ..< parq.count{
+                    z = false
+                    let parq_obj = parq[i] as! NSDictionary
+                    let id = parq_obj["id"] as! Int
+                    let nombre = parq_obj["nombre"] as! String
+                    let direccion = parq_obj["direccion"] as! String
+                    let precio = parq_obj["precio"] as! String
+                    let longitud = parq_obj["longitud"] as! String
+                    let latitud = parq_obj["latitud"] as! String
+                    let calificacion = parq_obj["calificacion"] as! Double
+                    let cantidad = parq_obj["cantidad"] as! Int
+                    let imagen = parq_obj["imagen"] as! String
+                    let lugareslibres = parq_obj["lugaresLibres"] as! Int
+                    let horarioApertura = parq_obj["horarioApertura"] as! String
+                    let horarioCerrado = parq_obj["horarioCerrado"] as! String
+                    
+                    let p = Parqueadero(id: id, nombre: nombre, direccion: direccion, precio: precio, longitud: longitud, latitud: latitud, calificacion: calificacion, cantidad: cantidad, imagen: imagen, lugareslibres: lugareslibres, horarioApertura: horarioApertura, horarioCerrado: horarioCerrado)
+                    if success == true {
+                    for j in idParq{
+                        if j == id {
+                            z = true
+                        }
+                    }
+                    if z == true{
+                        ParqueaderosFav.append(p)
+                    }else{
+                        ParqueaderosNoFav.append(p)
+                    }
+                    }else{
+                        ParqueaderosNoFav.append(p)
+                    }
+                }
+            //}
+        }catch{}
+        DispatchQueue.main.async {
+            self.Favorite.reloadData()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let p:Parqueadero = ParqueaderosFav[indexPath.row]
+            let mensaje:String = "Desea eliminar el "+p.nombre!+" de la seccion de favoritos"
+            let alertController = UIAlertController(title: "Eliminar favorito", message:
+                mensaje, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Eliminar", style: UIAlertActionStyle.default,handler: {
+                (result : UIAlertAction) -> Void in
+                var jsonUser = "{\"idu\":"+String(self.userID)
+                jsonUser += ",\"idp\":"+String(p.id)+"}"
+                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/favr", json:jsonUser, callback: self.processFavr)
+                for (index, value) in self.ParqueaderosFav.enumerated() {
+                    if p.id == value.id{
+                        self.ParqueaderosFav.remove(at: index)
+                        self.ParqueaderosNoFav.append(p)
+                    }
+                }
+            }))
+            //Cancel button action
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive, handler: nil)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        }else{
+            let p:Parqueadero = ParqueaderosNoFav[indexPath.row]
+            let mensaje:String = "Desea agregar el "+p.nombre!+" a la seccion de favoritos"
+            let alertController = UIAlertController(title: "Agregar favorito", message:
+                mensaje, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Agregar", style: UIAlertActionStyle.default,handler: {
+                (result : UIAlertAction) -> Void in
+                var jsonUser = "{\"id\":"+String(self.userID)
+                jsonUser += ",\"parqueadero\":"+String(p.id)+"}"
+                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/fava", json:jsonUser, callback: self.processFava)
+                for (index, value) in self.ParqueaderosNoFav.enumerated() {
+                    if p.id == value.id{
+                        self.ParqueaderosNoFav.remove(at: index)
+                        self.ParqueaderosFav.append(p)
+                    }
+                }
+            }))
+            
+            //Cancel button action
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive, handler: nil)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 
+    func processFavr(data:Data?){
+        do{
+            let json1:NSDictionary
+            json1 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            let success:Bool = json1.value(forKey: "success") as! Bool
+            if success == true {
+                DispatchQueue.main.async {
+                    self.Favorite.reloadData()
+                }
+            }
+        }catch{}
+        
+        DispatchQueue.main.async {
+            self.Favorite.reloadData()
+        }
+        
+    }
+    
+    func processFava(data:Data?){
+        do{
+            let json1:NSDictionary
+            json1 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
+            let success:Bool = json1.value(forKey: "success") as! Bool
+            if success == true {
+                DispatchQueue.main.async {
+                    self.Favorite.reloadData()
+                }
+            }
+        }catch{}
+        DispatchQueue.main.async {
+            self.Favorite.reloadData()
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
