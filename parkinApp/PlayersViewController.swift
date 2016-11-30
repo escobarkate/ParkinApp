@@ -27,7 +27,7 @@ class PlayersTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.tabBarController?.navigationItem.title = "Calificar parqueaderos"
         dao = UsuarioDAO()
         user = dao.all()
         print(user);
@@ -140,7 +140,7 @@ class PlayersTableViewController: UITableViewController {
                 var jsonUser = "{\"user\":"+String(self.userID)
                 jsonUser += ",\"parqueadero\":\""+String(p.id)
                 jsonUser += "\",\"calificacion\":\""+String(Int(self.slider.value))+"\"}"
-                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/cali", json: jsonUser, callback: self.processCalif)
+                self.client.post(url: "http://192.168.128.30:8080/parqueaderos/cali", json: jsonUser, callback: self.processCalif)
                 let x = Float(p.calificacion)+Float(Int(self.slider.value))
                 
                 let a = Float(p.cantidad)+1
@@ -150,7 +150,7 @@ class PlayersTableViewController: UITableViewController {
                 var json = "{\"id\":"+String(p.id)
                 json += ",\"cantidad\":"+String(Int(a))
                 json += ",\"calificacion\":\""+String(suma2)+"\"}"
-                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/cf", json: json, callback: self.processCf)
+                self.client.post(url: "http://192.168.128.30:8080/parqueaderos/cf", json: json, callback: self.processCf)
             })
             
             //Cancel button action
@@ -170,13 +170,13 @@ class PlayersTableViewController: UITableViewController {
     }
     
     func loadParqueaderos(){
-        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.128.30:8080/parqueaderos/calif", callback: processData)
     }
     
     func loadCalif(u:String){
         let jsonUser = "{\"id\":"+u+"}"
         print(jsonUser)
-        client.post(url: "http://192.168.1.6:8080/parqueaderos/caliUser", json:jsonUser, callback: processData2)
+        client.post(url: "http://192.168.128.30:8080/parqueaderos/caliUser", json:jsonUser, callback: processData2)
     }
     
     func processData(data:Data?){
@@ -236,6 +236,9 @@ class PlayersTableViewController: UITableViewController {
             json1 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary
             let success:Bool = json1.value(forKey: "success") as! Bool
             if success == true {
+                DispatchQueue.main.async {
+                    self.Calificar.reloadData()
+                }
             }
         }catch{}
         

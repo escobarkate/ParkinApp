@@ -12,6 +12,7 @@
 		C41BFD49651667366438244D /* Pods_parkinApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B192F9C645A114EAB2556FC1 /* Pods_parkinApp.framework */; };
 		E1100BAC1DDE847A00B03252 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100BAB1DDE847A00B03252 /* HttpClient.swift */; };
 		E1100BAE1DDE95BC00B03252 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100BAD1DDE95BC00B03252 /* Usuario.swift */; };
+		E116B3371DEE4D8C004389DB /* ParqueaderoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116B3361DEE4D8C004389DB /* ParqueaderoDAO.swift */; };
 		E16FCA651DDD4F280043C4F8 /* ViewControllerReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16FCA641DDD4F270043C4F8 /* ViewControllerReg.swift */; };
 		E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */; };
 		E1C5364A1DDF7F9800345900 /* UsuarioDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C536491DDF7F9800345900 /* UsuarioDAO.swift */; };
@@ -123,6 +124,7 @@
 		D38214D227DBBAA20F8110D0 /* Pods-parkinApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parkinApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-parkinApp/Pods-parkinApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E1100BAB1DDE847A00B03252 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		E1100BAD1DDE95BC00B03252 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		E116B3361DEE4D8C004389DB /* ParqueaderoDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParqueaderoDAO.swift; sourceTree = "<group>"; };
 		E16FCA641DDD4F270043C4F8 /* ViewControllerReg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerReg.swift; sourceTree = "<group>"; };
 		E16FCA661DDD54A60043C4F8 /* ViewControllerMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMapa.swift; sourceTree = "<group>"; };
 		E1C536491DDF7F9800345900 /* UsuarioDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioDAO.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				E1100BAB1DDE847A00B03252 /* HttpClient.swift */,
 				E1100BAD1DDE95BC00B03252 /* Usuario.swift */,
 				E1C536491DDF7F9800345900 /* UsuarioDAO.swift */,
+				E116B3361DEE4D8C004389DB /* ParqueaderoDAO.swift */,
 				E6A3BE1C1DE6507F009DF746 /* PlayersViewController.swift */,
 				E6A3BE241DE668CB009DF746 /* Parqueadero.swift */,
 				E67100D01DE7A5D1003F5BB2 /* FavoritosTableViewController.swift */,
@@ -676,6 +679,7 @@
 				E67100D11DE7A5D1003F5BB2 /* FavoritosTableViewController.swift in Sources */,
 				E1100BAE1DDE95BC00B03252 /* Usuario.swift in Sources */,
 				E6A3BE251DE668CB009DF746 /* Parqueadero.swift in Sources */,
+				E116B3371DEE4D8C004389DB /* ParqueaderoDAO.swift in Sources */,
 				E16FCA671DDD54A60043C4F8 /* ViewControllerMapa.swift in Sources */,
 				E1F27A851DDA6FEF002E3C4B /* AppDelegate.swift in Sources */,
 				E66819EC1DECE5310099D39A /* SearchTableViewController.swift in Sources */,

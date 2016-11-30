@@ -11,7 +11,7 @@ import UIKit
 class InfoParqueaderoTableViewController: UITableViewController {
     
     @IBOutlet var Informacion: UITableView!
-    var Parqueaderos:Parqueadero = Parqueadero(id: 0, nombre: "", direccion: "", precio: "", longitud: "", latitud: "", calificacion: 0, cantidad: 0, imagen: "", lugareslibres: 0, horarioApertura: "", horarioCerrado: "")
+    var Parqueaderos:Parqueadero? = nil
     let client:HttpClient = HttpClient()
 
     override func viewDidLoad() {
@@ -48,22 +48,23 @@ class InfoParqueaderoTableViewController: UITableViewController {
         
         
         if let nombreLabel = cell.viewWithTag(100) as? UILabel {
-            nombreLabel.text = Parqueaderos.nombre
+            nombreLabel.text = Parqueaderos?.nombre
         }
         
         if let dirLabel = cell.viewWithTag(101) as? UILabel {
-            dirLabel.text = Parqueaderos.direccion
+            dirLabel.text = Parqueaderos?.direccion
         }
         if let precioLabel = cell.viewWithTag(102) as? UILabel {
-            precioLabel.text = Parqueaderos.precio
+            precioLabel.text = Parqueaderos?.precio
         }
         
         if let puestosLabel = cell.viewWithTag(103) as? UILabel {
-            puestosLabel.text = String(Parqueaderos.lugareslibres)
+            let lug:String = ""+String(describing: Parqueaderos?.lugareslibres)
+            puestosLabel.text = lug
         }
         
         if let ImageView = cell.viewWithTag(105) as? UIImageView {
-            ImageView.image = self.imagen(parq: Parqueaderos.imagen!)
+            ImageView.image = self.imagen(parq: Parqueaderos!.imagen!)
             
         }
         return cell

@@ -14,13 +14,19 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     var ParqueaderosData: [Parqueadero] = [Parqueadero]()
     let client:HttpClient = HttpClient()
     var nombres:[String] = []
+    
+    var dao:ParqueaderoDAO!
+    
+    
     //let items = [String] ()
     var filteredItems = [String]()
     var searchController = UISearchController()
     
 
     override func viewDidLoad() {
+        self.tabBarController?.navigationItem.title = "Buscar parqueaderos"
         super.viewDidLoad()
+        dao = ParqueaderoDAO()
         loadParqueaderos()
         searchController = UISearchController(searchResultsController : nil)
         searchController.dimsBackgroundDuringPresentation = true
@@ -42,7 +48,9 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == "detalle"{
             let detalles:InfoParqueaderoTableViewController = segue.destination as! InfoParqueaderoTableViewController
-            detalles.Parqueaderos=ParqueaderosData[Buscar.indexPathForSelectedRow!.row]
+            //let parqueID = ParqueaderosData[Buscar.indexPathForSelectedRow!.row].id
+            //detalles.Parqueaderos = dao.parqById(id: parqueID)
+            detalles.Parqueaderos = ParqueaderosData[Buscar.indexPathForSelectedRow!.row]
         }
     }
 
@@ -89,8 +97,18 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     }
     
     func loadParqueaderos(){
-        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.128.30:8080/parqueaderos/calif", callback: processData)
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "detalle", sender: nil)
+        }
+    
+    }
+    
     
     func processData(data:Data?){
         
@@ -119,6 +137,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
                     let p = Parqueadero(id: id, nombre: nombre, direccion: direccion, precio: precio, longitud: longitud, latitud: latitud, calificacion: calificacion, cantidad: cantidad, imagen: imagen, lugareslibres: lugareslibres, horarioApertura: horarioApertura, horarioCerrado: horarioCerrado)
                     ParqueaderosData.append(p)
                     nombres.append(nombre)
+                    dao.insert(p: p)
                 }
             }
         }catch{}

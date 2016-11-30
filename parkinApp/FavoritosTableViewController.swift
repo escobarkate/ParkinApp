@@ -27,7 +27,7 @@ class FavoritosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.navigationItem.title = "Parqueaderos favoritos"
         dao = UsuarioDAO()
         user = dao.all()
         userID = Int(user[0].id)
@@ -109,13 +109,13 @@ class FavoritosTableViewController: UITableViewController {
     
     func loadFav(u:String){
         let jsonUser = "{\"id\":"+u+"}"
-        client.post(url: "http://192.168.1.6:8080/parqueaderos/fav", json:jsonUser, callback: processFav)
+        client.post(url: "http://192.168.128.30:8080/parqueaderos/fav", json:jsonUser, callback: processFav)
     }
     
     
     func loadParqueaderos(){
         let client:HttpClient = HttpClient()
-        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.128.30:8080/parqueaderos/calif", callback: processData)
     }
     
     func processFav(data:Data?){
@@ -192,7 +192,7 @@ class FavoritosTableViewController: UITableViewController {
                 (result : UIAlertAction) -> Void in
                 var jsonUser = "{\"idu\":"+String(self.userID)
                 jsonUser += ",\"idp\":"+String(p.id)+"}"
-                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/favr", json:jsonUser, callback: self.processFavr)
+                self.client.post(url: "http://192.168.128.30:8080/parqueaderos/favr", json:jsonUser, callback: self.processFavr)
                 for (index, value) in self.ParqueaderosFav.enumerated() {
                     if p.id == value.id{
                         self.ParqueaderosFav.remove(at: index)
@@ -213,7 +213,7 @@ class FavoritosTableViewController: UITableViewController {
                 (result : UIAlertAction) -> Void in
                 var jsonUser = "{\"id\":"+String(self.userID)
                 jsonUser += ",\"parqueadero\":"+String(p.id)+"}"
-                self.client.post(url: "http://192.168.1.6:8080/parqueaderos/fava", json:jsonUser, callback: self.processFava)
+                self.client.post(url: "http://192.168.128.30:8080/parqueaderos/fava", json:jsonUser, callback: self.processFava)
                 for (index, value) in self.ParqueaderosNoFav.enumerated() {
                     if p.id == value.id{
                         self.ParqueaderosNoFav.remove(at: index)

@@ -16,6 +16,7 @@ class ViewControllerMapa: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadParqueaderos()
+        self.tabBarController?.navigationItem.title = "Ubicación"
         cargarMapa()
     }
     
@@ -43,7 +44,7 @@ class ViewControllerMapa: UIViewController {
             let long = Double(p.longitud!)
             let lat = Double(p.latitud!)
             marker1.position = CLLocationCoordinate2DMake(lat!, long!)
-            marker1.title = p.nombre
+            marker1.title = "Parqueadero "+p.nombre!
             marker1.snippet = p.direccion
             //marker1.icon = GMSMarker.markerImage(with: UIColor.magenta)
             marker1.map = mapView
@@ -55,7 +56,7 @@ class ViewControllerMapa: UIViewController {
     
     func loadParqueaderos(){
         let client:HttpClient = HttpClient()
-        client.get(url: "http://192.168.1.6:8080/parqueaderos/calif", callback: processData)
+        client.get(url: "http://192.168.128.30:8080/parqueaderos/calif", callback: processData)
     }
     
     

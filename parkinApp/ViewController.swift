@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         let contra = contraseña.text!
         
         let jsonUser = "{\"user\":\""+usu+"\",\"password\":\""+contra+"\"}"
-        client.post(url: "http://192.168.1.6:8080/usuarios/login/", json: jsonUser, callback: processData)
+        client.post(url: "http://192.168.128.30:8080/usuarios/login/", json: jsonUser, callback: processData)
         
         
          }
@@ -67,6 +67,11 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "next", sender: nil)
                 }
+            }else{
+                //let alertController = UIAlertController(title: "Datos errados", message:
+                  //  "Por favor valide sus datos", preferredStyle: UIAlertControllerStyle.alert)
+                //alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
+                //self.present(alertController, animated: true, completion: nil)
             }
         }catch{}
     }
